@@ -11,4 +11,11 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.0'
+
 }
+
+test {
+    useJUnitPlatform()
+}
+
