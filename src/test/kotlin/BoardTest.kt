@@ -18,6 +18,8 @@ class BoardTest :AnnotationSpec(){
         board.initialize();
 
         println(board.print())
+        board.getBlackPawnsResult() shouldBe "BBBBBBBB"
+        board.getWhitePawnsResult() shouldBe "WWWWWWWW"
     }
 
 }

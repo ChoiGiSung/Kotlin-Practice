@@ -1,4 +1,4 @@
-class Board{
+class Board {
 
     private var pawns: ArrayList<ArrayList<Pawn>> = arrayListOf()
 
@@ -6,7 +6,7 @@ class Board{
 
     fun findPawn(index: Int) = pawns[index]
 
-    fun initialize(){
+    fun initialize() {
         addNoPawn()
         addBlackPawn()
         addNoPawn()
@@ -17,27 +17,47 @@ class Board{
         addNoPawn()
     }
 
-    fun print():String{
-        var result= "";
+    fun print(): String {
+        var result = "";
         for (pawn in pawns) {
             for (p in pawn) {
-                result+=p.color
+                result += p.color
             }
-            result+="\n"
+            result += "\n"
         }
         return result
     }
 
-    private fun addNoPawn(){
-        pawns.add(arrayListOf(NoPawn(),NoPawn(),NoPawn(),NoPawn(),NoPawn(),NoPawn(),NoPawn(),NoPawn()))
+    fun getWhitePawnsResult(): String {
+        var result = ""
+        val get = pawns.get(6)
+        for (p in get) {
+            result += p.color
+        }
+        return result
     }
 
-    private fun addBlackPawn(){
-        pawns.add(arrayListOf(Pawn("B"),Pawn("B"),Pawn("B"),Pawn("B"),Pawn("B"),Pawn("B"),Pawn("B"),Pawn("B")))
+    fun getBlackPawnsResult(): String {
+        var result = ""
+        val get = pawns.get(1)
+        for (p in get) {
+            result += p.color
+        }
+        return result
     }
 
-    private fun addWhitePawn(){
-        pawns.add(arrayListOf(Pawn("W"),Pawn("W"),Pawn("W"),Pawn("W"),Pawn("W"),Pawn("W"),Pawn("W"),Pawn("W")))
+
+    private fun addNoPawn() {
+        pawns.add(arrayListOf(NoPawn(), NoPawn(), NoPawn(), NoPawn(), NoPawn(), NoPawn(), NoPawn(), NoPawn()))
     }
+
+    private fun addBlackPawn() {
+        pawns.add(arrayListOf(Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B")))
+    }
+
+    private fun addWhitePawn() {
+        pawns.add(arrayListOf(Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W")))
+    }
+
 
 }
