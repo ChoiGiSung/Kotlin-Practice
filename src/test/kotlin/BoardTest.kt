@@ -5,13 +5,11 @@ class BoardTest :AnnotationSpec(){
 
     @Test
     fun findPawn() {
-        val pawns = arrayListOf(Pawn("black"))
-        var board = Board(pawns);
+        var board = Board();
+        board.addPawn(Pawn("black"))
 
         val findPawn = board.findPawn(0)
         findPawn.color shouldBe "black"
     }
 
-    fun addPawn() {
-    }
 }
