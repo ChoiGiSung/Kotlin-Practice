@@ -5,8 +5,8 @@ class PawnTest : AnnotationSpec(){
 
     @Test
     fun test(){
-        verifyPawn("black")
-        verifyPawn("white")
+        verifyPawn(Pawn.BLACK)
+        verifyPawn(Pawn.WHITE)
     }
 
     fun verifyPawn(color:String) {
