@@ -1,1 +1,1 @@
-class Pawn (var color:String = "black")
+open class Pawn (open var color:String = "black")
