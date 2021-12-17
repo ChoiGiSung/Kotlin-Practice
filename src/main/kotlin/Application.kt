@@ -1,3 +1,4 @@
 fun main(args: Array<String>){
-    println("Hello, World")
+    var game = Game();
+    game.gameStart()
 }

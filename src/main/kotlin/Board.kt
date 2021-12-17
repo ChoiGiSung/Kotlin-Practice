@@ -24,6 +24,7 @@ class Board {
             }
             result += "\n"
         }
+        println(result)
         return result
     }
 
