@@ -9,10 +9,9 @@ class Board {
     fun initialize() {
         addNoPawn()
         addBlackPawn()
-        addNoPawn()
-        addNoPawn()
-        addNoPawn()
-        addNoPawn()
+        for (i in 1..4){
+            addNoPawn()
+        }
         addWhitePawn()
         addNoPawn()
     }
