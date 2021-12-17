@@ -15,23 +15,25 @@ open class Piece (){
         const val BLACK_REPRESENTATION = "B"
         const val WHITE_REPRESENTATION = "W"
 
-        fun createBlackPawn(color: String,name: String):Piece = Piece(Piece.BLACK_COLOR,"Pawn")
-        fun createWhitePawn(color: String,name: String):Piece = Piece(Piece.WHITE_COLOR,"Pawn")
+        fun createBlackPawn():Piece = Piece(BLACK_COLOR,"Pawn")
+        fun createWhitePawn():Piece = Piece(WHITE_COLOR,"Pawn")
 
-        fun createBlackKnight(color: String,name: String):Piece = Piece(Piece.BLACK_COLOR,"Knight")
-        fun createWhiteKnight(color: String,name: String):Piece = Piece(Piece.WHITE_COLOR,"Knight")
+        fun createBlackKnight():Piece = Piece(BLACK_COLOR,"Knight")
+        fun createWhiteKnight():Piece = Piece(WHITE_COLOR,"Knight")
 
-        fun createBlackRook(color: String,name: String):Piece = Piece(Piece.BLACK_COLOR,"Rook")
-        fun createWhiteRook(color: String,name: String):Piece = Piece(Piece.WHITE_COLOR,"Rook")
+        fun createBlackRook():Piece = Piece(BLACK_COLOR,"Rook")
+        fun createWhiteRook():Piece = Piece(WHITE_COLOR,"Rook")
 
-        fun createBlackBishop(color: String,name: String):Piece = Piece(Piece.BLACK_COLOR,"Bishop")
-        fun createWhiteBishop(color: String,name: String):Piece = Piece(Piece.WHITE_COLOR,"Bishop")
+        fun createBlackBishop():Piece = Piece(BLACK_COLOR,"Bishop")
+        fun createWhiteBishop():Piece = Piece(WHITE_COLOR,"Bishop")
 
-        fun createBlackQueen(color: String,name: String):Piece = Piece(Piece.BLACK_COLOR,"Queen")
-        fun createWhiteQueen(color: String,name: String):Piece = Piece(Piece.WHITE_COLOR,"Queen")
+        fun createBlackQueen():Piece = Piece(BLACK_COLOR,"Queen")
+        fun createWhiteQueen():Piece = Piece(WHITE_COLOR,"Queen")
 
-        fun createBlackKing(color: String,name: String):Piece = Piece(Piece.BLACK_COLOR,"king")
-        fun createWhiteKing(color: String,name: String):Piece = Piece(Piece.WHITE_COLOR,"king")
+        fun createBlackKing():Piece = Piece(BLACK_COLOR,"king")
+        fun createWhiteKing():Piece = Piece(WHITE_COLOR,"king")
+
+        fun createNoPiece():Piece = Piece(".",".")
     }
 
 
