@@ -9,16 +9,9 @@ class PieceTest : AnnotationSpec(){
         verifyPawn(Piece.WHITE_COLOR,Piece.WHITE_REPRESENTATION)
     }
 
-    @Test
-    fun testDefaultConstruct(){
-        var piece = Piece();
-        piece.color shouldBe Piece.WHITE_COLOR
-        piece.representation shouldBe Piece.WHITE_REPRESENTATION
-    }
-
-    fun verifyPawn(color:String,representation:String) {
-        var piece = Piece(color,representation)
+    fun verifyPawn(color:String,name:String) {
+        var piece = Piece(color,name)
         piece.color shouldBe color
-        piece.representation shouldBe representation
+        piece.name shouldBe name
     }
 }
