@@ -1,3 +1,5 @@
+import utils.StringUtil
+
 class Board {
 
     private var pawns: ArrayList<ArrayList<Pawn>> = arrayListOf()
@@ -22,7 +24,7 @@ class Board {
             for (p in pawn) {
                 result += p.color
             }
-            result += "\n"
+            result += StringUtil.NEW_LINE
         }
         println(result)
         return result
