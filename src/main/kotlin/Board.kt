@@ -50,16 +50,23 @@ class Board {
 
 
     private fun addNoPawn() {
-        pieces.add(arrayListOf(NoPiece(), NoPiece(), NoPiece(), NoPiece(), NoPiece(), NoPiece(), NoPiece(), NoPiece()))
+        createPieceLine(Piece.createNoPiece())
     }
 
     private fun addBlackPawn() {
-        pieces.add(arrayListOf(Piece("B"), Piece("B"), Piece("B"), Piece("B"), Piece("B"), Piece("B"), Piece("B"), Piece("B")))
+        createPieceLine(Piece.createBlackPawn())
     }
 
     private fun addWhitePawn() {
-        pieces.add(arrayListOf(Piece("W"), Piece("W"), Piece("W"), Piece("W"), Piece("W"), Piece("W"), Piece("W"), Piece("W")))
+        createPieceLine(Piece.createWhitePawn())
     }
 
+    private fun createPieceLine(piece: Piece){
+        val pawns = arrayListOf<Piece>()
+        for (i in 1..10) {
+            pawns.add(piece)
+        }
+        pieces.add(pawns)
+    }
 
 }
