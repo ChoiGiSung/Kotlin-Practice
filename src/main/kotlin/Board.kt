@@ -2,11 +2,11 @@ import utils.StringUtil
 
 class Board {
 
-    private var pawns: ArrayList<ArrayList<Pawn>> = arrayListOf()
+    private var pieces: ArrayList<ArrayList<Piece>> = arrayListOf()
 
-    fun size() = pawns.size
+    fun size() = pieces.size
 
-    fun findPawn(index: Int) = pawns[index]
+    fun findPawn(index: Int) = pieces[index]
 
     fun initialize() {
         addNoPawn()
@@ -20,7 +20,7 @@ class Board {
 
     fun print(): String {
         var result = "";
-        for (pawn in pawns) {
+        for (pawn in pieces) {
             for (p in pawn) {
                 result += p.color
             }
@@ -32,7 +32,7 @@ class Board {
 
     fun getWhitePawnsResult(): String {
         var result = ""
-        val get = pawns.get(6)
+        val get = pieces.get(6)
         for (p in get) {
             result += p.color
         }
@@ -41,7 +41,7 @@ class Board {
 
     fun getBlackPawnsResult(): String {
         var result = ""
-        val get = pawns.get(1)
+        val get = pieces.get(1)
         for (p in get) {
             result += p.color
         }
@@ -50,15 +50,15 @@ class Board {
 
 
     private fun addNoPawn() {
-        pawns.add(arrayListOf(NoPawn(), NoPawn(), NoPawn(), NoPawn(), NoPawn(), NoPawn(), NoPawn(), NoPawn()))
+        pieces.add(arrayListOf(NoPiece(), NoPiece(), NoPiece(), NoPiece(), NoPiece(), NoPiece(), NoPiece(), NoPiece()))
     }
 
     private fun addBlackPawn() {
-        pawns.add(arrayListOf(Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B"), Pawn("B")))
+        pieces.add(arrayListOf(Piece("B"), Piece("B"), Piece("B"), Piece("B"), Piece("B"), Piece("B"), Piece("B"), Piece("B")))
     }
 
     private fun addWhitePawn() {
-        pawns.add(arrayListOf(Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W"), Pawn("W")))
+        pieces.add(arrayListOf(Piece("W"), Piece("W"), Piece("W"), Piece("W"), Piece("W"), Piece("W"), Piece("W"), Piece("W")))
     }
 
 

@@ -1,0 +1,1 @@
+class NoPiece ( var color:String = "."):Piece()
