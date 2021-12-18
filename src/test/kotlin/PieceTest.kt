@@ -5,14 +5,14 @@ class PieceTest : AnnotationSpec(){
 
     @Test
     fun makePiece(){
-        verifyPawn(Piece.BLACK_COLOR,Piece.BLACK_REPRESENTATION)
-        verifyPawn(Piece.WHITE_COLOR,Piece.WHITE_REPRESENTATION)
+        verifyPawn(Piece.BLACK_COLOR,Piece.Type.QUEEN.getBlackRepresentation())
+        verifyPawn(Piece.WHITE_COLOR,Piece.Type.KING.getBlackRepresentation())
     }
 
-    fun verifyPawn(color:String,name:String) {
-        var piece = Piece(color,name)
+    fun verifyPawn(color:String, representation:String) {
+        var piece = Piece(color,representation)
         piece.color shouldBe color
-        piece.name shouldBe name
+        piece.representation shouldBe representation
     }
 
     @Test

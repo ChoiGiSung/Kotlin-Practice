@@ -1,39 +1,50 @@
 open class Piece (){
 
     var color:String = ""
-    var name:String = ""
+    var representation:String = ""
 
-    constructor(color:String,name:String):this(){
+    constructor(color:String,representation:String):this(){
         this.color = color
-        this.name = name
+        this.representation = representation
+    }
+
+    enum class Type(private val representation:String){
+        PAWN("p"),
+        KNIGHT("n"),
+        ROOK("r"),
+        BISHOP("b"),
+        QUEEN("q"),
+        KING("k"),
+        NO_PIECE(".");
+
+        fun getWhiteRepresentation() = representation
+        fun getBlackRepresentation() = representation.uppercase()
     }
 
 
     companion object{
         const val BLACK_COLOR = "Black"
         const val WHITE_COLOR = "White"
-        const val BLACK_REPRESENTATION = "B"
-        const val WHITE_REPRESENTATION = "W"
 
-        fun createBlackPawn():Piece = Piece(BLACK_COLOR,"Pawn")
-        fun createWhitePawn():Piece = Piece(WHITE_COLOR,"Pawn")
+        fun createBlackPawn():Piece = Piece(BLACK_COLOR,Type.PAWN.getWhiteRepresentation())
+        fun createWhitePawn():Piece = Piece(WHITE_COLOR,Type.PAWN.getBlackRepresentation())
 
-        fun createBlackKnight():Piece = Piece(BLACK_COLOR,"Knight")
-        fun createWhiteKnight():Piece = Piece(WHITE_COLOR,"Knight")
+        fun createBlackKnight():Piece = Piece(BLACK_COLOR,Type.KNIGHT.getWhiteRepresentation())
+        fun createWhiteKnight():Piece = Piece(WHITE_COLOR,Type.KNIGHT.getBlackRepresentation())
 
-        fun createBlackRook():Piece = Piece(BLACK_COLOR,"Rook")
-        fun createWhiteRook():Piece = Piece(WHITE_COLOR,"Rook")
+        fun createBlackRook():Piece = Piece(BLACK_COLOR,Type.ROOK.getWhiteRepresentation())
+        fun createWhiteRook():Piece = Piece(WHITE_COLOR,Type.ROOK.getBlackRepresentation())
 
-        fun createBlackBishop():Piece = Piece(BLACK_COLOR,"Bishop")
-        fun createWhiteBishop():Piece = Piece(WHITE_COLOR,"Bishop")
+        fun createBlackBishop():Piece = Piece(BLACK_COLOR,Type.BISHOP.getWhiteRepresentation())
+        fun createWhiteBishop():Piece = Piece(WHITE_COLOR,Type.BISHOP.getBlackRepresentation())
 
-        fun createBlackQueen():Piece = Piece(BLACK_COLOR,"Queen")
-        fun createWhiteQueen():Piece = Piece(WHITE_COLOR,"Queen")
+        fun createBlackQueen():Piece = Piece(BLACK_COLOR,Type.QUEEN.getWhiteRepresentation())
+        fun createWhiteQueen():Piece = Piece(WHITE_COLOR,Type.QUEEN.getBlackRepresentation())
 
-        fun createBlackKing():Piece = Piece(BLACK_COLOR,"king")
-        fun createWhiteKing():Piece = Piece(WHITE_COLOR,"king")
+        fun createBlackKing():Piece = Piece(BLACK_COLOR,Type.KING.getWhiteRepresentation())
+        fun createWhiteKing():Piece = Piece(WHITE_COLOR,Type.KING.getBlackRepresentation())
 
-        fun createNoPiece():Piece = Piece(".",".")
+        fun createNoPiece():Piece = Piece(".",Type.NO_PIECE.getBlackRepresentation())
     }
 
     fun isWhite() = this.color == WHITE_COLOR
