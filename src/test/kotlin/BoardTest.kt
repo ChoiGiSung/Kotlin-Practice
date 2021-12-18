@@ -4,22 +4,12 @@ import io.kotlintest.specs.AnnotationSpec
 class BoardTest :AnnotationSpec(){
 
     @Test
-    fun findPawn() {
-//        var board = Board()
-//        board.addPawn(arrayListOf<Pawn>(Pawn("black")))
-//
-//        val findPawn = board.findPawn(0).get(0)
-//        findPawn.color shouldBe "black"
-    }
+    fun pieceCount(){
+        var board = Board()
+        board.initialize()
 
-    @Test
-    fun boardInit(){
-        var board = Board();
-        board.initialize();
+        board.pieceCount() shouldBe 16
 
-        println(board.print())
-        board.getBlackPawnsResult() shouldBe "BBBBBBBB"
-        board.getWhitePawnsResult() shouldBe "WWWWWWWW"
     }
 
 }

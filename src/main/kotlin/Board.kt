@@ -1,3 +1,12 @@
+import Piece.Companion.createBlackBishop
+import Piece.Companion.createBlackKing
+import Piece.Companion.createBlackKnight
+import Piece.Companion.createBlackQueen
+import Piece.Companion.createBlackRook
+import Piece.Companion.createWhiteBishop
+import Piece.Companion.createWhiteKnight
+import Piece.Companion.createWhiteQueen
+import Piece.Companion.createWhiteRook
 import utils.StringUtil
 
 class Board {
@@ -8,14 +17,38 @@ class Board {
 
     fun findPawn(index: Int) = pieces[index]
 
+    fun pieceCount():Int{
+        var result = 0
+        for (pieceList in pieces) {
+            for (piece in pieceList) {
+                if (piece.representation != "."){
+                    result++
+                }
+            }
+        }
+        return result
+    }
+
     fun initialize() {
-        addNoPawn()
+        addBlackSpecials()
         addBlackPawn()
         for (i in 1..4){
             addNoPawn()
         }
         addWhitePawn()
-        addNoPawn()
+        addWhiteSpecials()
+    }
+
+    private fun addBlackSpecials() {
+        var list = arrayListOf(createBlackRook(), createBlackKnight(), createBlackBishop(), createBlackQueen(),
+            createBlackKing(), createBlackBishop(), createBlackKnight(), createBlackRook())
+        pieces.add(list)
+    }
+
+    private fun addWhiteSpecials() {
+        var list = arrayListOf(createWhiteRook(), createWhiteKnight(), createWhiteBishop(), createWhiteQueen(),
+            createBlackKing(), createWhiteBishop(), createWhiteKnight(), createWhiteRook())
+        pieces.add(list)
     }
 
     fun print(): String {
@@ -29,25 +62,6 @@ class Board {
         println(result)
         return result
     }
-
-    fun getWhitePawnsResult(): String {
-        var result = ""
-        val get = pieces.get(6)
-        for (p in get) {
-            result += p.color
-        }
-        return result
-    }
-
-    fun getBlackPawnsResult(): String {
-        var result = ""
-        val get = pieces.get(1)
-        for (p in get) {
-            result += p.color
-        }
-        return result
-    }
-
 
     private fun addNoPawn() {
         createPieceLine(Piece.createNoPiece())
@@ -63,7 +77,7 @@ class Board {
 
     private fun createPieceLine(piece: Piece){
         val pawns = arrayListOf<Piece>()
-        for (i in 1..10) {
+        for (i in 0..7) {
             pawns.add(piece)
         }
         pieces.add(pawns)
