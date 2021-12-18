@@ -36,5 +36,8 @@ open class Piece (){
         fun createNoPiece():Piece = Piece(".",".")
     }
 
+    fun isWhite() = this.color == WHITE_COLOR
+    fun isBlack() = this.color == BLACK_COLOR
+
 
 }
