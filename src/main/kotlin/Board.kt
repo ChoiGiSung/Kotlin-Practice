@@ -4,6 +4,7 @@ import Piece.Companion.createBlackKnight
 import Piece.Companion.createBlackQueen
 import Piece.Companion.createBlackRook
 import Piece.Companion.createWhiteBishop
+import Piece.Companion.createWhiteKing
 import Piece.Companion.createWhiteKnight
 import Piece.Companion.createWhiteQueen
 import Piece.Companion.createWhiteRook
@@ -47,7 +48,7 @@ class Board {
 
     private fun addWhiteSpecials() {
         var list = arrayListOf(createWhiteRook(), createWhiteKnight(), createWhiteBishop(), createWhiteQueen(),
-            createBlackKing(), createWhiteBishop(), createWhiteKnight(), createWhiteRook())
+            createWhiteKing(), createWhiteBishop(), createWhiteKnight(), createWhiteRook())
         pieces.add(list)
     }
 
